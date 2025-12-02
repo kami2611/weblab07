@@ -1,0 +1,22 @@
+.about-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.about-container h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-container h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-container p {
+  margin-bottom: 1rem;
+}

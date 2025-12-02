@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.footer-content {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #475569;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    border-top-color: #334155;
+    background-color: rgba(30, 41, 59, 0.6);
+  }
+
+  .footer-content {
+    color: #cbd5e1;
+  }
+}
