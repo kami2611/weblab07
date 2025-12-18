@@ -21,6 +21,12 @@ export default function Navbar() {
           <NavLink to="/contact" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
             Contact
           </NavLink>
+          <NavLink to="/items" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
+            View Items
+          </NavLink>
+          <NavLink to="/create-item" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
+            Create Item
+          </NavLink>
         </nav>
       </div>
     </header>

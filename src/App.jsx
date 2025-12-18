@@ -7,6 +7,10 @@ import Sidebar from './components/layouts/Sidebar'
 import Home from './components/pages/Home'
 import Hbout from './components/pages/Hbout'
 import Contact from './components/pages/Contact'
+import CreateItem from './components/pages/CreateItem'
+import ViewAllItems from './components/pages/ViewAllItems'
+import ViewItem from './components/pages/ViewItem'
+import EditItem from './components/pages/EditItem'
 import PageNotFound from './components/pages/PageNotFound'
 function App() {
   return (
@@ -21,6 +25,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<Hbout />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/create-item" element={<CreateItem />} />
+            <Route path="/items" element={<ViewAllItems />} />
+            <Route path="/item/:id" element={<ViewItem />} />
+            <Route path="/edit-item/:id" element={<EditItem />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
