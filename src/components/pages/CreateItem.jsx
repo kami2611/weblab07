@@ -40,7 +40,7 @@ function CreateItem() {
       navigate(`/item/${docRef.id}`)
     } catch (err) {
       console.error('Error adding document:', err)
-      setError('Failed to create item. Please try again.')
+      setError(`Failed to create item: ${err.message}`)
     } finally {
       setLoading(false)
     }
