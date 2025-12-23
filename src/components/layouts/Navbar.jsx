@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="navbar-container">
         <div className="navbar-brand">
           <div className="navbar-logo">BookRent</div>
-          <span className="navbar-tagline">Rent books easily</span>
+          <span className="navbar-tagline">Rent books easily and effortless</span>
         </div>
 
         <nav className="navbar-nav">
