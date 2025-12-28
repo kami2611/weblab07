@@ -52,6 +52,28 @@
   background-color: #f1f5f9;
 }
 
+.navbar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.navbar-signup {
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+}
+
+.navbar-signup:hover {
+  background: #5568d3;
+}
+
+.navbar-signup.active {
+  background: #4c5fd8;
+}
+
 @media (prefers-color-scheme: dark) {
   .navbar {
     border-bottom-color: #334155;

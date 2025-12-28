@@ -1,8 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 import './Navbar.css'
 
 export default function Navbar() {
+  const { currentUser, logout } = useAuth()
+
+  const handleLogout = async () => {
+    await logout()
+  }
+
   return (
     <header className="navbar">
       <div className="navbar-container">
@@ -27,6 +34,26 @@ export default function Navbar() {
           <NavLink to="/create-item" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
             Create Item
           </NavLink>
+          
+          {currentUser ? (
+            <>
+              <NavLink to="/profile" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
+                {currentUser.displayName || 'Profile'}
+              </NavLink>
+              <button onClick={handleLogout} className="navbar-link navbar-btn">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <NavLink to="/login" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
+                Login
+              </NavLink>
+              <NavLink to="/signup" className={({ isActive }) => `navbar-link navbar-signup ${isActive ? 'active' : ''}`}>
+                Sign Up
+              </NavLink>
+            </>
+          )}
         </nav>
       </div>
     </header>

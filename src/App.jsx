@@ -12,6 +12,10 @@ import ViewAllItems from './components/pages/ViewAllItems'
 import ViewItem from './components/pages/ViewItem'
 import EditItem from './components/pages/EditItem'
 import PageNotFound from './components/pages/PageNotFound'
+import Login from './components/pages/Login'
+import SignUp from './components/pages/SignUp'
+import ForgotPassword from './components/pages/ForgotPassword'
+import Profile from './components/pages/Profile'
 function App() {
   return (
     <div className="app-container">
@@ -29,6 +33,10 @@ function App() {
             <Route path="/items" element={<ViewAllItems />} />
             <Route path="/item/:id" element={<ViewItem />} />
             <Route path="/edit-item/:id" element={<EditItem />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>

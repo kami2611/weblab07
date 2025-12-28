@@ -2,3 +2,83 @@
   max-width: 72rem;
   margin: 0 auto;
 }
+
+.auth-banner, .welcome-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.auth-banner h3, .welcome-banner h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.auth-banner p, .welcome-banner p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.auth-banner-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.auth-banner-btn {
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.auth-banner-btn.primary {
+  background: white;
+  color: #667eea;
+}
+
+.auth-banner-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+}
+
+.auth-banner-btn.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.auth-banner-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .auth-banner, .welcome-banner {
+    padding: 30px 20px;
+    margin: 20px 10px;
+  }
+  
+  .auth-banner h3, .welcome-banner h3 {
+    font-size: 22px;
+  }
+  
+  .auth-banner-buttons {
+    flex-direction: column;
+  }
+  
+  .auth-banner-btn {
+    width: 100%;
+  }
+}
+
