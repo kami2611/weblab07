@@ -35,6 +35,12 @@ export default function Navbar() {
             Create Item
           </NavLink>
           
+          {currentUser && currentUser.email === 'admin@lab07app.com' && (
+            <NavLink to="/admin" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
+              Admin
+            </NavLink>
+          )}
+
           {currentUser ? (
             <>
               <NavLink to="/profile" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>

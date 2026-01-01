@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../firebase/config'
+import { useAuth } from '../../context/AuthContext'
 import './CreateItem.css'
 
 function CreateItem() {
   const navigate = useNavigate()
+  const { currentUser } = useAuth()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+
+  useEffect(() => {
+    if (!currentUser) {
+      navigate('/login')
+    }
+  }, [currentUser, navigate])
+
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -33,7 +42,9 @@ function CreateItem() {
         name: formData.name,
         description: formData.description,
         price: Number(formData.price),
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        userId: currentUser ? currentUser.uid : 'anonymous',
+        userEmail: currentUser ? currentUser.email : 'anonymous'
       })
       
       alert('Item created successfully!')

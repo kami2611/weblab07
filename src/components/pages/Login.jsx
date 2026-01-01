@@ -26,7 +26,13 @@ const Login = () => {
       setMessage('')
       setLoading(true)
       
-      const result = await login(email, password)
+      // Handle special admin login
+      let loginEmail = email
+      if (email === 'admin') {
+        loginEmail = 'admin@lab07app.com'
+      }
+
+      const result = await login(loginEmail, password)
       
       if (result.success) {
         setMessage(result.message)

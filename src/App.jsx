@@ -16,6 +16,9 @@ import Login from './components/pages/Login'
 import SignUp from './components/pages/SignUp'
 import ForgotPassword from './components/pages/ForgotPassword'
 import Profile from './components/pages/Profile'
+import AdminDashboard from './components/pages/AdminDashboard'
+import AdminRoute from './components/auth/AdminRoute'
+
 function App() {
   return (
     <div className="app-container">
@@ -37,6 +40,11 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/admin" element={
+              <AdminRoute>
+                <AdminDashboard />
+              </AdminRoute>
+            } />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>

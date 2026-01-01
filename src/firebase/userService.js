@@ -1,7 +1,7 @@
 // Firestore User Management Service
 // Handles storing and retrieving user data from Firestore
 
-import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore'
+import { doc, setDoc, getDoc, serverTimestamp, collection, getDocs } from 'firebase/firestore'
 import { db } from './config'
 
 // Store user data in Firestore
@@ -125,8 +125,29 @@ export const updateUserData = async (uid, updates) => {
   }
 }
 
+// Get all users
+export const getAllUsers = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'users'))
+    const users = []
+    querySnapshot.forEach((doc) => {
+      users.push(doc.data())
+    })
+    return {
+      success: true,
+      users
+    }
+  } catch (error) {
+    return {
+      success: false,
+      error: error.message
+    }
+  }
+}
+
 export default {
   storeUserData,
   getUserData,
-  updateUserData
+  updateUserData,
+  getAllUsers
 }
